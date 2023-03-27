@@ -91,11 +91,11 @@ jobs:
             - name: Build shared library
               run: cmake --build build-shared --parallel
             - name: Check result files
-              run: Get-ChildItem -Path .\ –Recurse
+              run: Get-ChildItem -Path .\build-shared\src\Debug
             - name: Move lib to lwjgl path
               run: |
                   mkdir -ItemType "directory" ./native/windows/x64/org/lwjgl3/glfw/
-                  cp ./build-shared/src/libglfw.3.4.dll ./native/windows/x64/org/lwjgl3/glfw/libglfw.dll
+                  cp ./build-shared/src/Debug/glfw3.dll ./native/windows/x64/org/lwjgl3/glfw/glfw.dll
             - uses: actions/upload-artifact@v3
               with:
                 path: |
