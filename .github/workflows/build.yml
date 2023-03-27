@@ -94,7 +94,7 @@ jobs:
               run: Get-ChildItem -Path .\build-shared\src\Debug
             - name: Move lib to lwjgl path
               run: |
-                  mkdir -ItemType "directory" ./native/windows/x64/org/lwjgl3/glfw/
+                  mkdir ./native/windows/x64/org/lwjgl3/glfw/
                   cp ./build-shared/src/Debug/glfw3.dll ./native/windows/x64/org/lwjgl3/glfw/glfw.dll
             - uses: actions/upload-artifact@v3
               with:
