@@ -45,7 +45,7 @@ jobs:
             - name: Check result files
               run: ls -al ./build-shared/src
             - name: Move lib to lwjgl path
-            - run: |
+              run: |
                   mkdir ./native/linux/x64/org/lwjgl3/glfw/
                   cp ./build-shared/src/libglfw.3.4.so ./native/linux/x64/org/lwjgl3/glfw/libglfw.so
 
@@ -65,7 +65,7 @@ jobs:
             - name: Check result files
               run: ls -al ./build-shared/src
             - name: Move lib to lwjgl path
-            - run: |
+              run: |
                   mkdir ./native/macos/x64/org/lwjgl3/glfw/
                   cp ./build-shared/src/libglfw.3.4.dylib ./native/macos/x64/org/lwjgl3/glfw/libglfw.dylib
 
@@ -84,7 +84,7 @@ jobs:
             - name: Check result files
               run: ls ./build-shared/src
             - name: Move lib to lwjgl path
-            - run: |
+              run: |
                   mkdir ./native/windows/x64/org/lwjgl3/glfw/
                   cp ./build-shared/src/libglfw.3.4.dll ./native/windows/x64/org/lwjgl3/glfw/libglfw.dll
 
