@@ -46,6 +46,10 @@ jobs:
             - name: Check result files
               run: |
                   ls -al ./build-shared/src
+            - name: Move lib to lwjgl path
+            - run: |
+                  mkdir ./native/linux/x64/org/lwjgl3/glfw/
+                  cp ./build-shared/src/libglfw.3.4.so ./native/linux/x64/org/lwjgl3/glfw/libglfw.so
 
     build-macos-cocoa-clang:
         name: Cocoa (macOS, Clang)
@@ -63,6 +67,10 @@ jobs:
             - name: Check result files
               run: |
                   ls -al ./build-shared/src
+            - name: Move lib to lwjgl path
+            - run: |
+                  mkdir ./native/macos/x64/org/lwjgl3/glfw/
+                  cp ./build-shared/src/libglfw.3.4.dylib ./native/macos/x64/org/lwjgl3/glfw/libglfw.dylib
 
     build-windows-win32-vs2022:
         name: Win32 (Windows, VS2022)
@@ -79,4 +87,8 @@ jobs:
             - name: Check result files
               run: |
                   ls ./build-shared/src
+            - name: Move lib to lwjgl path
+            - run: |
+                  mkdir ./native/windows/x64/org/lwjgl3/glfw/
+                  cp ./build-shared/src/libglfw.3.4.dll ./native/windows/x64/org/lwjgl3/glfw/libglfw.dll
 
