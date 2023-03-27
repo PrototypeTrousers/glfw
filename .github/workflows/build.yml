@@ -23,8 +23,7 @@ jobs:
             - name: Build shared library
               run: cmake --build build-shared --parallel
             - name: Check result files
-              run: |
-                  ls -al ./build-shared/src
+              run: ls -al ./build-shared/src
 
     build-linux-full-clang:
         name: X11+Wayland (Linux, Clang)
@@ -44,8 +43,7 @@ jobs:
             - name: Build shared library
               run: cmake --build build-shared --parallel
             - name: Check result files
-              run: |
-                  ls -al ./build-shared/src
+              run: ls -al ./build-shared/src
             - name: Move lib to lwjgl path
             - run: |
                   mkdir ./native/linux/x64/org/lwjgl3/glfw/
@@ -65,8 +63,7 @@ jobs:
             - name: Build shared library
               run: cmake --build build-shared --parallel
             - name: Check result files
-              run: |
-                  ls -al ./build-shared/src
+              run: ls -al ./build-shared/src
             - name: Move lib to lwjgl path
             - run: |
                   mkdir ./native/macos/x64/org/lwjgl3/glfw/
@@ -85,8 +82,7 @@ jobs:
             - name: Build shared library
               run: cmake --build build-shared --parallel
             - name: Check result files
-              run: |
-                  ls ./build-shared/src
+              run: ls ./build-shared/src
             - name: Move lib to lwjgl path
             - run: |
                   mkdir ./native/windows/x64/org/lwjgl3/glfw/
