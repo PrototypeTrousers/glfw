@@ -78,5 +78,5 @@ jobs:
               run: cmake --build build-shared --parallel
             - name: Check result files
               run: |
-                  ls -al ./build-shared/src
+                  ls ./build-shared/src
 
