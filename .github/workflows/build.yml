@@ -1,9 +1,5 @@
 name: Build
-on:
-    pull_request:
-    push:
-        branches: [ ci, master, latest, 3.3-stable ]
-    workflow_dispatch:
+on: [workflow_dispatch]
 permissions:
     statuses: write
     contents: read
@@ -51,10 +47,7 @@ jobs:
               run: cmake --build build-shared --parallel
             - name: Check result files
               run: |
-                  ls . -al
-                  find ./CMake
-                  find ./build-shared
-                  find ./tests
+                  ls -al ./build-shared/src
 
     build-macos-cocoa-clang:
         name: Cocoa (macOS, Clang)
