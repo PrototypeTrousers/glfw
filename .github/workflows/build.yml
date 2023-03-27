@@ -57,8 +57,8 @@ jobs:
             - name: Check result files
               run: |
                   ls .
-                  find ./build
-                  find ./bin
+                  find ./build-shared
+                  find ./tests
 
     build-macos-cocoa-clang:
         name: Cocoa (macOS, Clang)
