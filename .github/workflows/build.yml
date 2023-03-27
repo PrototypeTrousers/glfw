@@ -54,6 +54,11 @@ jobs:
               run: cmake -S . -B build-shared -D GLFW_BUILD_WAYLAND=ON -D BUILD_SHARED_LIBS=ON
             - name: Build shared library
               run: cmake --build build-shared --parallel
+            - name: Check result files
+              run: |
+                  ls .
+                  find ./build
+                  find ./bin
 
     build-macos-cocoa-clang:
         name: Cocoa (macOS, Clang)
