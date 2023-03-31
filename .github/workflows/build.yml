@@ -85,6 +85,11 @@ jobs:
             CFLAGS: /WX
         steps:
             - uses: actions/checkout@v3
+            
+            - name: Configure static library
+              run: cmake -S . -B build-static -G "Visual Studio 17 2022"
+            - name: Build static library
+              run: cmake --build build-static --parallel
 
             - name: Configure shared library
               run: cmake -S . -B build-shared -G "Visual Studio 17 2022" -D BUILD_SHARED_LIBS=ON
